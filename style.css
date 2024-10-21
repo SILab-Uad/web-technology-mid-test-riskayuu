@@ -4,24 +4,97 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e0e7ff; /* Background color */
+    margin: 0;
+    background: linear-gradient(135deg, #ffcccb, #8b9dc3); /* Gradient background */
 }
 
 .container {
     text-align: center;
     padding: 30px;
-    background-color: #ffffff; /* Background color for container */
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent backgroud for the blur effect */
+    backdrop-filter: blur(10px); /* Blurred effect */
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
     max-width: 400px;
+    transition: transform 0.2s ease, box-shadow 0.2 ease;
 }
 
 /* TODO: Add styles for labels, inputs, buttons, and output text */
+.container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Slight zoom-in effect on hover */
+}
+
 h1 {
     font-size: 2.2em;
     margin-bottom: 20px;
-    color: #4a4a4a; /* Header color */
+    color: #333; /* Darker header color for contrast */
 }
 
 /* Add more styles here as needed */
+label {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Styles for input fields */
+input[type="number"], input[type="checkbox"] {
+    margin: 10px 0;
+}
+
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #3b5998; /* Focus color */
+    box-shadow: 0 0 5px rgba(59, 89, 152, 0.5);
+}
+
+/* Styles for checkboxes */
+input[type="checkbox"] {
+    transform: scale(1.2); /* Slightly larger checkboxes */
+    margin-right: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Styles for buttons */
+button {
+    background-color: #3b5998; /* Button color matching the theme */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #2d4373; /* Darker shade for hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Styles for the output text */
+#passwordOutput {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #3b5998; /* Matching color for output text */
+    font-weight: bold;
+    text-align: center;
+}
